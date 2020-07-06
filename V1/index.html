@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="color picker.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha256-gX8uuyxN8stSMHWO9arnnKyenTOALaVAcVB3b6P87e4=" crossorigin="anonymous"></script>
+    <title>color picker</title>
+</head>
+  
+<body class="body">
+    <!--  topbar --> 
+  <div class="gradient-topbar"></div>
+  <!--  app container --> 
+  <div class="responsive-container">
+    
+    <!--  header --> 
+      <section class="header">
+        <div class="color-picker-icon">
+          <img src="Images\colour picker icon new.svg" width="145" class="image">
+        </div>
+        
+        <!--  library and save buttons--> 
+        <div class="buttons-container">
+          <button class="library-button">
+            <img src="Images\library icon.svg" width="18" class="library-icon">
+            <p class="button-text">Library</p>
+          </button>
+          <button class="save-button">
+            <!-- <img src="Images\save icon.svg" width="18" class="library-icon"> -->
+            <p class="button-text">Save Palette</p>
+          </button>
+          <button class="generate-button">
+            <!-- <img src="Images\refresh icon.svg" width="18" class="library-icon"> -->
+            <p class="button-text">New Palette</p>
+          </button>
+        </div>
+
+        <!--  save palette flyout--> 
+        <div class="save-palette-flyout"> 
+          <img src="Images\Saving-flyout-pointer.svg" class="save-flyout-pointer" alt="">
+          <div class="name-icon-container">
+            <img src="Images\Name palette icon.svg" alt="name-icon">
+          </div>
+          <h3 class="save-flyout-text" >Name it & save it</h3>
+          <input type="text" class="savename-input" name="savename" placeholder="Give it a name">
+          <button class="save-palette-button">
+            <p class="button-text">Save Pallete</p>
+          </button>
+          <button class="cancel-button-text">Cancel</button>
+        </div>
+
+
+        <!--  library  flyout-->
+        <div class="library-flyout">
+          <img src="Images\Saving-flyout-pointer.svg" class="library-flyout-pointer" alt="">
+          <div class="library-header">
+            <h4 class="library-title">Library</h4>
+            <img src="Images\library close.svg" class="library-close" alt="">
+          </div>
+          <div class="library-colour">
+            <h5 class="library-colour-name">Purple haze</h5>
+            <div class="color-sample"></div>
+            <div class="color-sample"></div>
+            <div class="color-sample"></div>
+            <div class="color-sample"></div>
+            <div class="color-sample"></div>
+          </div>
+        </div>
+
+
+
+        <!-- gradient blur bg --> 
+        <img src="Images\bg.png" alt="" class="gradient-bg-top">
+      </section>
+    
+      <!--  colour container --> 
+      <section class="colours-container">
+        
+        <!--  first colour--> 
+        <div class="colour-block">
+          <!--  colour block --> 
+          <div class="colour-container">
+            <div class="hexcontainer">
+              <h2 class="smallhex">#ff000</h2>
+            </div>
+          </div>
+          <!--  sliders --> 
+          <div class="hsl-sliders hslactive">
+            <div class="hue-container">
+              <p class="slider-text">H</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="360" step= "1" name="hue" class="slider hue-input" data-hue="0">
+              </div>
+            </div>
+            <div class="saturation-container">
+              <p class="slider-text">S</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="saturation" class="slider bright-input" data-sat="0">
+              </div>
+            </div>
+            <div class="brightness-container">
+              <p class="slider-text">L</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="brightness" class="slider sat-input" data-light="0">
+              </div>
+            </div>
+          </div>
+          <!--  colour block --> 
+          <div class="color-block-controls">
+            <!--  colour details --> 
+            <div class="color-details">
+              <h2 class="color-hex">#ff0000</h2>
+              <img src="Images\copy icon.svg" width="22" alt="" class="copy-icon">
+            </div>
+            <!--  colour controls --> 
+            <div class="block-buttons">
+              <button class="adjust">
+                <img src="Images\block controls.svg" width="23" alt="" class="adjust-icon"></button>
+              <button class="lock">
+                <img src="Images\lock icon.svg" width="23" alt="" class="lock-icon"></button>
+            </div>
+          </div>
+        </div>
+
+        <!--  second colour--> 
+        <div class="colour-block">
+          <!--  colour block --> 
+          <div class="colour-container">
+            <div class="hexcontainer">
+              <h2 class="smallhex">#ff000</h2>
+            </div>
+          </div>
+          <!--  sliders --> 
+          <div class="hsl-sliders hslactive">
+            <div class="hue-container">
+              <p class="slider-text">H</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="360" step= "1" name="hue" class="slider hue-input" data-hue="1">
+              </div>
+            </div>
+            <div class="saturation-container">
+              <p class="slider-text">S</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="saturation" class="slider bright-input" data-sat="1">
+              </div>
+            </div>
+            <div class="brightness-container">
+              <p class="slider-text">L</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="brightness" class="slider sat-input" data-light="1">
+              </div>
+            </div>
+          </div>
+          <!--  colour block --> 
+          <div class="color-block-controls">
+            <!--  colour details --> 
+            <div class="color-details">
+              <h2 class="color-hex">#ff0000</h2>
+              <img src="Images\copy icon.svg" width="22" alt="" class="copy-icon">
+            </div>
+            <!--  colour controls --> 
+            <div class="block-buttons">
+              <button class="adjust">
+                <img src="Images\block controls.svg" width="23" alt="" class="adjust-icon"></button>
+              <button class="lock">
+                <img src="Images\lock icon.svg" width="23" alt="" class="lock-icon"></button>
+            </div>
+          </div>
+        </div>
+
+        <!--  third colour--> 
+        <div class="colour-block">
+          <!--  colour block --> 
+          <div class="colour-container">
+            <div class="hexcontainer">
+              <h2 class="smallhex">#ff000</h2>
+            </div>
+          </div>
+          <!--  sliders --> 
+          <div class="hsl-sliders hslactive">
+            <div class="hue-container">
+              <p class="slider-text">H</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="360" step= "1" name="hue" class="slider hue-input" data-hue="2">
+              </div>
+            </div>
+            <div class="saturation-container">
+              <p class="slider-text">S</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="saturation" class="slider bright-input" data-sat="2">
+              </div>
+            </div>
+            <div class="brightness-container">
+              <p class="slider-text">L</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="brightness" class="slider sat-input" data-light="2">
+              </div>
+            </div>
+          </div>
+          <!--  colour block --> 
+          <div class="color-block-controls">
+            <!--  colour details --> 
+            <div class="color-details">
+              <h2 class="color-hex">#ff0000</h2>
+              <img src="Images\copy icon.svg" width="22" alt="" class="copy-icon">
+            </div>
+            <!--  colour controls --> 
+            <div class="block-buttons">
+              <button class="adjust">
+                <img src="Images\block controls.svg" width="23" alt="" class="adjust-icon"></button>
+              <button class="lock">
+                <img src="Images\lock icon.svg" width="23" alt="" class="lock-icon"></button>
+            </div>
+          </div>
+        </div>
+
+        <!--  fourth colour--> 
+        <div class="colour-block">
+          <!--  colour block --> 
+          <div class="colour-container">
+            <div class="hexcontainer">
+              <h2 class="smallhex">#ff000</h2>
+            </div>
+          </div>
+          <!--  sliders --> 
+          <div class="hsl-sliders hslactive">
+            <div class="hue-container">
+              <p class="slider-text">H</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="360" step= "1" name="hue" class="slider hue-input" data-hue="3">
+              </div>
+            </div>
+            <div class="saturation-container">
+              <p class="slider-text">S</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="saturation" class="slider bright-input" data-sat="3">
+              </div>
+            </div>
+            <div class="brightness-container">
+              <p class="slider-text">L</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="brightness" class="slider sat-input" data-light="3">
+              </div>
+            </div>
+          </div>
+          <!--  colour block --> 
+          <div class="color-block-controls">
+            <!--  colour details --> 
+            <div class="color-details">
+              <h2 class="color-hex">#ff0000</h2>
+              <img src="Images\copy icon.svg" width="22" alt="" class="copy-icon">
+            </div>
+            <!--  colour controls --> 
+            <div class="block-buttons">
+              <button class="adjust">
+                <img src="Images\block controls.svg" width="23" alt="" class="adjust-icon"></button>
+              <button class="lock">
+                <img src="Images\lock icon.svg" width="23" alt="" class="lock-icon"></button>
+            </div>
+          </div>
+        </div>
+
+        <!--  fifth colour--> 
+        <div class="colour-block">
+          <!--  colour block --> 
+          <div class="colour-container">
+            <div class="hexcontainer">
+              <h2 class="smallhex">#ff000</h2>
+            </div>
+          </div>
+          <!--  sliders --> 
+          <div class="hsl-sliders hslactive">
+            <div class="hue-container">
+              <p class="slider-text">H</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="360" step= "1" name="hue" class="slider hue-input" data-hue="4">
+              </div>
+            </div>
+            <div class="saturation-container">
+              <p class="slider-text">S</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="saturation" class="slider bright-input" data-sat="4">
+              </div>
+            </div>
+            <div class="brightness-container">
+              <p class="slider-text">L</p>
+              <div class="slider-container">
+                <input type="range" min="0" max="1" step= "0.01" name="brightness" class="slider sat-input" data-light="4">
+              </div>
+            </div>
+          </div>
+          <!--  colour block --> 
+          <div class="color-block-controls">
+            <!--  colour details --> 
+            <div class="color-details">
+              <h2 class="color-hex">#ff0000</h2>
+              <img src="Images\copy icon.svg" width="22" alt="" class="copy-icon">
+            </div>
+            <!--  colour controls --> 
+            <div class="block-buttons">
+              <button class="adjust">
+                <img src="Images\block controls.svg" width="23" alt="" class="adjust-icon"></button>
+              <button class="lock">
+                <img src="Images\lock icon.svg" width="23" alt="" class="lock-icon"></button>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+  <!--  footer block --> 
+    <div class="info">Click on hex to copy</div> 
+    <div class="popup-wrap">
+      <div class="popup-container ">
+        <img src="Images\copied icon.svg" width="18" class="copied-icon">
+        <h3 class="popup"> copied to clipboard</h3>
+      </div>
+    </div>  
+  </div>
+
+  <script src="colorpicker.js" ></script>
+
+
+</body>
+</html>
