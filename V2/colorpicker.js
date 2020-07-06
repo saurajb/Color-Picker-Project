@@ -10,7 +10,7 @@ const lockbutton = document.querySelectorAll('.lock')
 const hslsliders = document.querySelectorAll('.hsl-sliders')
 const logobutton = document.querySelector('.color-picker-icon')
 
-// console.log(lockbutton);
+console.log(currenthexes);
 
 let initialColours;
 let savedPalette = [];
@@ -61,8 +61,6 @@ lockbutton.forEach((button,index)=> {
         addlockclass(button, index);
     })
 })
-
-
 
 
 
@@ -199,6 +197,8 @@ function hslcontrols(e){
     
 }
 
+
+
 //change text on slider pos change
 function updateText(index){
     
@@ -215,6 +215,8 @@ function updateText(index){
     checkcontrast(color,textHex);
     // console.log(mainhex);
 }
+
+
 
 
 // reset all the inputs to corresponding color
@@ -241,6 +243,8 @@ function resetinputs() {
     })
 
 }
+
+
 
 // copy hex to clipboard
 function copytoclipboard(hex){
@@ -276,13 +280,26 @@ const savecontainer = document.querySelector('.save-palette-flyout');
 const saveinput = document.querySelector('.savename-input');
 
 //save flyout event listeners
-savebtn.addEventListener('click', opensaveflyout);
+savebtn.addEventListener('click', togglesaveflyout);
+closesave.addEventListener('click',togglesaveflyout);
+submitsave.addEventListener('click',opensaveflyout);
 
 
-function opensaveflyout(){
+function togglesaveflyout(e){
     savecontainer.classList.toggle("saveactive");
 }
 
+
+function opensaveflyout(e){
+    savecontainer.classList.toggle("saveactive");
+    const savetext = saveinput.value;
+    const colors =[];
+    currenthexes.forEach(hex => {
+        colors.push(hex.innerText);
+    })
+    console.log(savetext);
+    console.log(colors);
+}
 
 
 randomColors();
