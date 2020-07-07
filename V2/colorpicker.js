@@ -250,13 +250,13 @@ function addlockclass(button, index){
 }
 
 
-// saving and retrieving the pallettes
+// saving and retrieving the pallettes also
 const savebtn = document.querySelector('.save-button');
 const submitsave = document.querySelector('.save-palette-button');
 const closesave = document.querySelector('.cancel-button-text');
 const savecontainer = document.querySelector('.save-palette-flyout');
 const saveinput = document.querySelector('.savename-input');
-const librarycontainer = document.querySelector('');
+
 
 //save flyout event listeners
 savebtn.addEventListener('click', togglesaveflyout);
@@ -298,7 +298,7 @@ function savetolocal(paletteObj){
 }
 
 function openlibrary(){
-
+    
 }
 
 

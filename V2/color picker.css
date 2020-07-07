@@ -397,8 +397,8 @@
             .library-flyout{
                 position: absolute;  
                 left: auto;  
-                bottom: 100%;  
-                right: 18.5%;    
+                bottom: 90%;  
+                right: 17%;    
                 z-index: 1;  
                 display: flex;  
                 width: 330px;  
@@ -411,17 +411,39 @@
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
                 opacity: 100;
                 pointer-events: none;
+                transition: all 0.2s ease-in;
             }
 
             .library-flyout.libactive{
-
+                position: absolute;  
+                left: auto;  
+                bottom: 100%;  
+                right: 17%;    
+                z-index: 1;  
+                display: flex;  
+                width: 330px;  
+                height: 313px;  
+                flex-direction: column;  
+                align-items: center;  
+                border-radius: 11px;
+                background-color: rgba(20, 20, 20, 0.973);  
+                background-image: linear-gradient(183.88deg, rgba(0, 0, 0, 0.6) 42.28%, rgba(255, 255, 255, 0) 377.46%), rgba(0, 0, 0, 0.8);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+                opacity: 100;
+                pointer-events: all;
+                transition: all 0.2s ease-in;
             }
 
                 .library-flyout-pointer{
                     position: absolute;
                     left: 160px;
-                    bottom: -10.6px;
+                    bottom: -8.6px;
                     transform: scale(2);
+                }
+
+                .palette-container{
+                    
+
                 }
 
                 .library-header{
@@ -436,7 +458,7 @@
                 }
 
                 .library-title{
-                    margin-top: 15px;  
+                    margin-top: 12px;  
                     font-family: Goiters-medium;  
                     color: hsla(0, 0.00%, 100.00%, 1.00);  
                     font-weight: 500;
@@ -445,7 +467,7 @@
 
                 .library-close{
                     margin-bottom: 9px;
-                    transform: scale(1.2);
+                    transform: scale(1.15);
                 }
 
                 .library-colour{
@@ -473,7 +495,7 @@
                     align-self: center;  
                     text-align: left;
                     font-family: Goiters-medium;
-                    font-size: 10px;  
+                    font-size: 10.5px;  
                     color: rgb(105, 105, 105);  
                     font-weight: 500;
                 }
@@ -488,19 +510,13 @@
                     box-shadow: inset 1px 1px 4px 0 hsla(0, 0.00%, 0.00%, 0.30);
                 }
 
-                .palettebtn{
-                    display: inline;
+                .palette-arrow{
+                    display: flex;
                     width: 23px;  
                     height: 23px;  
-                    margin-left: 5px;
-                    border: solid 1.2px  rgba(112, 112, 112, 0.315);   
-                    border-radius: 20px ;  
-                    /* background-color: rgba(129, 129, 129, 0.37);  */
-                }
-
-                .openpalette-arrow{
- 
-                    transform: scale(1.4);
+                    margin-left: 8px;
+                    border-radius: 20px;
+                    transform: scale(.6);  
                 }
 
 
