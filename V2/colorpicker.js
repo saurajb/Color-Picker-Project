@@ -10,13 +10,11 @@ const lockbutton = document.querySelectorAll('.lock')
 const hslsliders = document.querySelectorAll('.hsl-sliders')
 const logobutton = document.querySelector('.color-picker-icon')
 
-console.log(currenthexes);
 
 let initialColours;
 let savedPalette = [];
 
 
-// console.log(currenthexes);
 
 // add event listener
 generateBtn.forEach(button =>{
@@ -24,7 +22,6 @@ generateBtn.forEach(button =>{
     console.log(button);
 })
 
-// generateBtn.addEventListener("click",randomColors);
 
 logobutton.addEventListener("click",randomColors);
 
@@ -32,7 +29,6 @@ sliders.forEach(sliders =>{
     sliders.addEventListener("input",hslcontrols);
 })
 
-// change text hex after change in slider position
 colorDivs.forEach((div,index) => {
     div.addEventListener("change", () => {
         updateText(index);
@@ -67,18 +63,8 @@ lockbutton.forEach((button,index)=> {
 
 // Functions
 
-//colour generator
+//colour generation with chroma js
 function generateHex(){
-    
-    // to generate colour-hexes by yourself use this
-    // const letters = "0123456789ABCDEF";
-    // let hash = '#'
-    // for(let i=0;i<6;i++){
-    //     hash += letters[Math.floor(Math.random()*16)]
-    // }
-    // return hash; 
-
-    //generating hexes with chroma js
     const hexColour = chroma.random();
     return hexColour;
 }
@@ -93,13 +79,13 @@ function randomColors(){
         // accesssign the small hex
         let colouritem = div.children[0];
         let smallhexcontainer = colouritem.children[0];
-        const smallhex = smallhexcontainer.children[0]; //  smallhex
+        const smallhex = smallhexcontainer.children[0]; 
 
         // accessing the hex and colour container
         let item = div.children[2];
         let textcontainer = item.children[0]
-        const colorhex = textcontainer.children[0] // hex colour
-        const colorcontainer = div.children[0] // color container
+        const colorhex = textcontainer.children[0] 
+        const colorcontainer = div.children[0] 
 
         //random colour
         const randomcolor = generateHex()
@@ -124,8 +110,6 @@ function randomColors(){
         const saturation = sliders[1];
 
 
-        // console.log(initialColours);
-
         checkcontrast(randomcolor,smallhex);
         colorisesliders(randomcolor,hue,brightness,saturation);
     })
@@ -148,16 +132,13 @@ function checkcontrast(colour,text){
 //colorise sliders
 function colorisesliders(color,hue,brightness,saturation){
     
-    // scale saturation
     const nosat = color.set("hsl.s",0);
     const fullsat = color.set("hsl.s",1);
     const scaleSat = chroma.scale([nosat,color,fullsat]);
 
-    //scale brightness
     const midbright = color.set("hsl.s",0.5);
     const scalebright = chroma.scale(["black",midbright,"white"]);
 
-    //update input colours
     brightness.style.background =`linear-gradient(to right,${scalebright(0)},${scalebright(0.2)},${scalebright(1)})`;
     saturation.style.background = `linear-gradient(to right,${scaleSat(0)},${scaleSat(1)})`;
     hue.style.background = `linear-gradient(to right, rgb(204,75,75),rgb(204,204,75),rgb(75,204,75),rgb(75,204,204),rgb(75,75,204),rgb(204,75,204),rgb(204,75,75))`;
@@ -192,7 +173,6 @@ function hslcontrols(e){
 
     colorcontainers[index].style.backgroundColor = color;
 
-    //colorize slider bgs
     colorisesliders(color,hue,brightness,saturation);
     
 }
@@ -202,18 +182,15 @@ function hslcontrols(e){
 //change text on slider pos change
 function updateText(index){
     
-    // fetching the active div
     const activediv = colorcontainers[index];
     const color = chroma(activediv.style.backgroundColor);
 
-    // update all the heses
     const textHex = activediv.querySelector('h2');
     const mainhex = currenthexes[index];
     mainhex.innerText = color.hex();
     textHex.innerText = color.hex();
 
     checkcontrast(color,textHex);
-    // console.log(mainhex);
 }
 
 
@@ -255,7 +232,6 @@ function copytoclipboard(hex){
     document.execCommand("copy");
     document.body.removeChild(element);
 
-    //pop up animation
     const popup = popupbox;
     popup.classList.add("popupactive");
     
@@ -266,11 +242,13 @@ function openadjustmentpanel(index){
     hslsliders[index].classList.toggle("hslactive");
 }
 
+
 //add lock class
 function addlockclass(button, index){
     lockbutton[index].classList.toggle("lockactive");
     colorDivs[index].classList.toggle("locked");
 }
+
 
 // saving and retrieving the pallettes
 const savebtn = document.querySelector('.save-button');
@@ -278,6 +256,7 @@ const submitsave = document.querySelector('.save-palette-button');
 const closesave = document.querySelector('.cancel-button-text');
 const savecontainer = document.querySelector('.save-palette-flyout');
 const saveinput = document.querySelector('.savename-input');
+const librarycontainer = document.querySelector('');
 
 //save flyout event listeners
 savebtn.addEventListener('click', togglesaveflyout);
@@ -317,6 +296,11 @@ function savetolocal(paletteObj){
     localStorage.setItem("palettes",JSON.stringify(localpalettes));
 
 }
+
+function openlibrary(){
+
+}
+
 
 randomColors();
 
