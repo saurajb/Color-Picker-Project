@@ -292,16 +292,33 @@ function togglesaveflyout(e){
 
 function opensaveflyout(e){
     savecontainer.classList.toggle("saveactive");
-    const savetext = saveinput.value;
+    const palettename = saveinput.value;
     const colors =[];
     currenthexes.forEach(hex => {
         colors.push(hex.innerText);
     })
-    console.log(savetext);
-    console.log(colors);
+    let palettenr = savedPalette.length;
+    const paletteObj = {palettename,colors,nr:palettenr}
+    savedPalette.push(paletteObj);
+    console.log(savedPalette);
+    savetolocal(paletteObj);
+    saveinput.value = "";
 }
 
 
+function savetolocal(paletteObj){
+    let localpalettes;
+    if(localStorage.getItem("palettes")=== null){
+        localpalettes = [];
+    }else{
+        localpalettes = JSON.parse(localStorage.getItem("palettes"));
+    }
+    localpalettes.push(paletteObj);
+    localStorage.setItem("palettes",JSON.stringify(localpalettes));
+
+}
+
 randomColors();
+
 
 
