@@ -19,7 +19,6 @@ let savedPalette = [];
 // add event listener
 generateBtn.forEach(button =>{
     button.addEventListener("click",randomColors);
-    console.log(button);
 })
 
 
@@ -256,12 +255,21 @@ const submitsave = document.querySelector('.save-palette-button');
 const closesave = document.querySelector('.cancel-button-text');
 const savecontainer = document.querySelector('.save-palette-flyout');
 const saveinput = document.querySelector('.savename-input');
+const librarybtn = document.querySelector('.library-button');
+const librarycont = document.querySelector('.library-flyout');
+const libraryclose = document.querySelector('.library-close');
+const palettecont = document.querySelector('.palette-container');
+
+
+console.log(palettecont);
 
 
 //save flyout event listeners
 savebtn.addEventListener('click', togglesaveflyout);
 closesave.addEventListener('click',togglesaveflyout);
 submitsave.addEventListener('click',opensaveflyout);
+librarybtn.addEventListener('click',openlibrary);
+libraryclose.addEventListener('click',openlibrary);
 
 
 function togglesaveflyout(e){
@@ -279,9 +287,32 @@ function opensaveflyout(e){
     let palettenr = savedPalette.length;
     const paletteObj = {palettename,colors,nr:palettenr}
     savedPalette.push(paletteObj);
-    console.log(savedPalette);
     savetolocal(paletteObj);
     saveinput.value = "";
+    
+    //generate the library item
+    const librarycont = document.createElement("div");
+    librarycont.classList.add("library-colour");
+
+    const librarytitle = document.createElement("h5");
+    librarytitle.innerText = paletteObj.palettename;
+    librarytitle.classList.add("library-colour-name");
+    librarycont.appendChild(librarytitle);
+
+
+    paletteObj.colors.forEach(color => {
+        const smallcolor = document.createElement("div");
+        smallcolor.style.background = color;
+        smallcolor.classList.add("color-sample");
+        librarycont.appendChild(smallcolor);
+    })
+
+    const smallarrow = document.createElement("div");
+    smallarrow.innerHTML = '<img src="Images/Arrow.svg" class="palette-arrow" alt="">';
+    librarycont.appendChild(smallarrow);
+    smallarrow.classList.add("arrow-open");
+    
+    palettecont.appendChild(librarycont);
 }
 
 
@@ -293,12 +324,13 @@ function savetolocal(paletteObj){
         localpalettes = JSON.parse(localStorage.getItem("palettes"));
     }
     localpalettes.push(paletteObj);
-    localStorage.setItem("palettes",JSON.stringify(localpalettes));
-
+    localStorage.setItem("palettes",JSON.stringify(localpalettes)); 
 }
 
+
+
 function openlibrary(){
-    
+    librarycont.classList.toggle("libactive");
 }
 
 
