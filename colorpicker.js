@@ -233,14 +233,12 @@ function copytoclipboard(hex){
 
     const popup = popupbox;
     popup.classList.add("popupactive");
-    
 }
 
 //open and close toggle panel
 function openadjustmentpanel(index){
     hslsliders[index].classList.toggle("hslactive");
 }
-
 
 //add lock class
 function addlockclass(button, index){
@@ -259,15 +257,15 @@ const librarybtn = document.querySelector('.library-button');
 const librarycont = document.querySelector('.library-flyout');
 const libraryclose = document.querySelector('.library-close');
 const palettecont = document.querySelector('.palette-container');
+const paletteMain  = document.querySelector('.library-colour');
 
-
-console.log(palettecont);
+console.log(paletteMain);
 
 
 //save flyout event listeners
 savebtn.addEventListener('click', togglesaveflyout);
 closesave.addEventListener('click',togglesaveflyout);
-submitsave.addEventListener('click',opensaveflyout);
+submitsave.addEventListener('click',savepalette);
 librarybtn.addEventListener('click',openlibrary);
 libraryclose.addEventListener('click',openlibrary);
 
@@ -277,7 +275,7 @@ function togglesaveflyout(e){
 }
 
 
-function opensaveflyout(e){
+function savepalette(e){
     savecontainer.classList.toggle("saveactive");
     const palettename = saveinput.value;
     const colors =[];
@@ -293,6 +291,7 @@ function opensaveflyout(e){
     //generate the library item
     const librarycont = document.createElement("div");
     librarycont.classList.add("library-colour");
+    librarycont.classList.add(paletteObj.nr);
 
     const librarytitle = document.createElement("h5");
     librarytitle.innerText = paletteObj.palettename;
@@ -312,6 +311,31 @@ function opensaveflyout(e){
     librarycont.appendChild(smallarrow);
     smallarrow.classList.add("arrow-open");
     smallarrow.classList.add(paletteObj.nr);
+
+    smallarrow.addEventListener('click',e => {
+        openlibrary()
+        const paletteindex = e.target.classList[1];
+        initialColours = [];
+        savedPalette[paletteindex].colors.forEach((color,index) => {
+            initialColours.push(color);
+            colorcontainers[index].style.background = color;
+            updateText(index);
+        })
+    })
+
+    librarycont.addEventListener('click',e => {
+        openlibrary()
+        const paletteindex = e.target.classList[1];
+        initialColours = [];
+        savedPalette[paletteindex].colors.forEach((color,index) => {
+            initialColours.push(color);
+            colorcontainers[index].style.background = color;
+            updateText(index);
+        })
+        resetinputs();
+    })
+
+    
     
     palettecont.appendChild(librarycont);
 }
