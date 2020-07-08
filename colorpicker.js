@@ -311,6 +311,7 @@ function opensaveflyout(e){
     smallarrow.innerHTML = '<img src="Images/Arrow.svg" class="palette-arrow" alt="">';
     librarycont.appendChild(smallarrow);
     smallarrow.classList.add("arrow-open");
+    smallarrow.classList.add(paletteObj.nr);
     
     palettecont.appendChild(librarycont);
 }

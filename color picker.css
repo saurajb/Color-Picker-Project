@@ -47,7 +47,6 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    
   }
   
 
@@ -94,8 +93,8 @@
             display: -ms-flexbox;
             display: flex;
             width: 100%;
-            height: 60px;
-            margin-top: 25px;
+            height: 54px;
+            margin-top: 28px;
             margin-bottom: 50px;
             -webkit-box-pack: center;
             -webkit-justify-content: center;
@@ -122,7 +121,7 @@
                 display: -ms-flexbox;
                 display: flex;
                 margin-top: 0px;
-                margin-right: -20px;
+                margin-right: -40px;
                 padding-top: 16px;
                 padding-bottom: 13px;
                 -webkit-box-pack: center;
@@ -562,7 +561,8 @@
             z-index: -1;
             width: 900px;
             margin-top: -200px;
-            opacity: 0.5;
+            opacity: 0.55;
+            transform: scale(2);
             }
                             
 
@@ -619,10 +619,10 @@
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
-            background: linear-gradient(180.59deg, #FFFFFF 90.09%, #e0e0e0 192.91%);
+            /* background: linear-gradient(180.59deg, #ffffff86 90.09%, #e0e0e0a9 192.91%); */
             box-sizing: border-box;
-            box-shadow: inset 0px -1px 2.5px rgba(0, 0, 0, 0.2), inset 0px 2px 4px #FFFFFF;
-            border-radius: 8px;
+            box-shadow: inset 0px -1px 2.5px rgba(59, 59, 59, 0.2), inset 0px 2px 4px #FFFFFF;
+            border-radius: 20px;
         }
  
  /* colour container*/
@@ -632,14 +632,14 @@
                 justify-content: center;
                 width: 93%;
                 height: 480vh;
-                margin-top: 12px;
+                margin-top: 15px;
                 margin-bottom:4px;
                 border-radius: 10px;
                 background: #FF7575;
                 border: 1.24896px solid rgba(0, 0, 0, 0.05);
                 box-sizing: border-box;
                 box-shadow: inset 0px 3.33055px 3.33055px rgba(0, 0, 0, 0.08);
-                border-radius: 4.99582px;
+                border-radius: 10px;
             }
                 .hexcontainer{
                     margin-top: 22px;
@@ -1024,8 +1024,8 @@
             transform: scale(.9);
             opacity: 0%;
             transition: all 0.5s ease-in-out;
-            bottom: 5.1%;
-            left: 340px;
+            bottom: 5.3%;
+            left: 335px;
             width: 120px;
             transform: scale(1);
             z-index: 2;
@@ -1040,7 +1040,7 @@
             
 
         .popupactive{
-            transform: scale(1.1);
+            transform: scale(1.05);
             opacity: 100%;
             transition: all 0.5s ;
             /* animation: popupactive 1s;
