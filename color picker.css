@@ -165,7 +165,6 @@
                     padding-bottom: 5px;
                     max-width: 22em;
                     position: relative;
-                    /* padding: 0em  0em; */
                     box-sizing: border-box;
                     color: #FFF;
                     background: linear-gradient(181.41deg, #000000 42.37%, rgba(255, 255, 255, 0) 314.15%), linear-gradient(89.97deg, #FB3F3F 3.35%, rgba(255, 238, 88, 0.770833) 25.45%, rgba(75, 250, 113, 0.97) 43.53%, #57C7F8 63.12%, #9C4EFF 82.71%, #FF2B2B 99.78%);
@@ -1525,7 +1524,7 @@
             overflow: hidden;
             margin-right: -20px;
             margin-bottom: 5px;
-            transform: scale(.95);
+            transform: scale(.85);
             } 
 
         .info { 
@@ -1540,7 +1539,7 @@
                 position: absolute;
                 opacity: 0%;
                 transition: all 0.5s ease-in-out;
-                bottom: 6.5%;
+                bottom: 7.5%;
                 left: 230px;
                 width: 120px;
                 transform: scale(.9);
@@ -1563,6 +1562,15 @@
             
             .save-button {
                 padding-bottom: 8px;
+            }
+
+            .color-hex {
+                margin-left: 2px;
+                font-family: 'Goiters-Bold', sans-serif;
+                color: rgba(3, 3, 3, 0.356);
+                font-size: 1.1vw;
+                font-weight: 500;
+                cursor: pointer;
             }
             
 
