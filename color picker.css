@@ -1380,7 +1380,7 @@
         display: flex;
         width: 100%;
         height: 60px;
-        margin-top: 17px;
+        margin-top: 20px;
         margin-bottom: 16px;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
@@ -1394,7 +1394,7 @@
 
     .color-picker-icon {
         margin-top: 0px;
-        transform: scale(1.1);
+        transform: scale(1.3);
     }
     
     .buttons-container {
@@ -1497,7 +1497,7 @@
             display: flex;
             justify-content: center;
             width: 93%;
-            height: 130vh;
+            height: 150vh;
             border-radius: 10px;
             background: #FF7575;
             border: 1.24896px solid rgba(0, 0, 0, 0.05);
