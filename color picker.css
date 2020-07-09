@@ -2030,6 +2030,7 @@
 
                             
 @media screen and (max-width: 1024px) and (orientation : landscape){
+<<<<<<< HEAD
     
     .colours-container{
         display: none;
@@ -2066,6 +2067,8 @@
 }
 
 @media screen and (max-width: 1112px) and (orientation : landscape){
+=======
+>>>>>>> 1a0d29a499900aa00e4c12e66ff3c8f9223f2fe5
     
     .colours-container{
         display: none;
@@ -2101,6 +2104,45 @@
 
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width: 1112px) and (orientation : landscape){
+    
+    .colours-container{
+        display: none;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    .header{
+        display: flex;
+        margin-top: 100px;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+
+    .responsive-text{
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 14px;
+        font-family: Goiters-medium;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 11px;
+        text-align: center;
+        color: #db7937;
+        opacity: 0.9;
+        line-height: 24px;
+        width:20vw ;
+    }
+
+}
+
+>>>>>>> 1a0d29a499900aa00e4c12e66ff3c8f9223f2fe5
 
 @media screen and (max-width: 1366px) and (orientation : portrait){
     
