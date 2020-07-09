@@ -1,3 +1,4 @@
+
 // Global selections and varaibales
 const colorDivs = document.querySelectorAll('.colour-block');
 const colorcontainers = document.querySelectorAll('.colour-container');
@@ -356,6 +357,7 @@ function savetolocal(paletteObj){
 
 function openlibrary(){
     librarycont.classList.toggle("libactive");
+    window.localStorage.clear();
 }
 
 
