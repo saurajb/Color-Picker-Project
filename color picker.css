@@ -113,6 +113,20 @@
                 transform: scale(1.5);
             }
             
+
+            .responsive-text{
+                display: none;
+                margin-top: 13px;
+                margin-bottom: 14px;
+                font-family: Goiters-medium;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 11px;
+                text-align: center;
+                color: #db7937;
+                opacity: 0.9;
+            }
 /* hgeader buttons*/
 
             .buttons-container {
@@ -1989,3 +2003,81 @@
 
 
                             
+@media screen and (max-width: 1366px) and (orientation : landscape){
+    
+    .colours-container{
+        display: none;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    .header{
+        display: flex;
+        margin-top: 100px;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+
+    .responsive-text{
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 14px;
+        font-family: Goiters-medium;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 11px;
+        text-align: center;
+        color: #db7937;
+        opacity: 0.9;
+        line-height: 24px;
+        width:20vw ;
+    }
+
+}
+
+@media screen and (max-width: 1366px) and (orientation : portrait){
+    
+    .colours-container{
+        display: none;
+    }
+
+    .color-picker-icon{
+        padding-right: 0px;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    .header{
+        display: flex;
+        margin-top: 200px;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    .gradient-bg-top{
+        width: 100vw;
+    }
+
+    .responsive-text{
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 14px;
+        font-family: Goiters-medium;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 11px;
+        text-align: center;
+        color: #db7937;
+        opacity: 0.9;
+        line-height: 24px;
+        width:65vw ;
+    }
+
+}
