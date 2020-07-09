@@ -1540,7 +1540,7 @@
                 position: absolute;
                 opacity: 0%;
                 transition: all 0.5s ease-in-out;
-                bottom: 5.5%;
+                bottom: 6.5%;
                 left: 230px;
                 width: 120px;
                 transform: scale(.9);
@@ -1556,6 +1556,14 @@
                 opacity: 0%; */
             }
 
+            .library-button {
+                padding-bottom: 8px;
+            }
+
+            
+            .save-button {
+                padding-bottom: 8px;
+            }
             
 
 
@@ -1575,6 +1583,15 @@
                 border: 2px solid #3838380e;
                 border-radius: 51px;
             }  
+
+            .button-text {
+                padding-left: 0px;
+                font-family: 'Goiters-medium', sans-serif;
+                color: #fff;
+                font-size: 9.5px;
+                line-height: 16px;
+                font-weight: 500;
+            }
     
 
 }
