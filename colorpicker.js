@@ -10,7 +10,10 @@ const adjustmentbutton = document.querySelectorAll('.adjust');
 const lockbutton = document.querySelectorAll('.lock')
 const hslsliders = document.querySelectorAll('.hsl-sliders')
 const logobutton = document.querySelector('.color-picker-icon')
+const copyicon =  document .querySelectorAll('.copy-icon')
 
+
+console.log(copyicon);
 
 let initialColours;
 let savedPalette = [];
@@ -38,6 +41,12 @@ colorDivs.forEach((div,index) => {
 currenthexes.forEach(hex=>{
     hex.addEventListener("click",()=>{
         copytoclipboard(hex);
+    })
+})
+
+copyicon.forEach(icon=>{
+    icon.addEventListener("click",()=>{
+        iconcopytoclipboard(icon);
     })
 })
 
@@ -227,6 +236,20 @@ function resetinputs() {
 function copytoclipboard(hex){
     const element = document.createElement("textarea");
     element.value = hex.innerText;
+    document.body.appendChild(element);
+    element.select();
+    document.execCommand("copy");
+    document.body.removeChild(element);
+
+    const popup = popupbox;
+    popup.classList.add("popupactive");
+}
+
+function iconcopytoclipboard(icon){
+    const element = document.createElement("textarea");
+    iconpar = icon.parentElement;
+    hexval = iconpar.children[0];
+    element.value = hexval.innerText;
     document.body.appendChild(element);
     element.select();
     document.execCommand("copy");
